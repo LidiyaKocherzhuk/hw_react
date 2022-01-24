@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+#root, .comments, .posts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.users, .posts{
+    width: 50%;
+}
+
+.user, .post, .comment{
+    padding: 20px;
+    margin-bottom:20px ;
+}
+.m-left {
+    margin-left: 20%;
+}
+
+.post {
+    width: 40%;
+}
+.comment{
+    width: 20%;
+    border-left: 2px solid silver;
+    margin-left: 10px;
+}
