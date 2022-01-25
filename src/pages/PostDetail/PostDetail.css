@@ -1,0 +1,11 @@
+.postDetail{
+    width: 50%;
+}
+.postD{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+}

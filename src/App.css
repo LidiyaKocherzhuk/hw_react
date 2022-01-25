@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.menu {
+    height: 60px;
+    background: silver;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    border: 1px solid #818080;
+    margin: 0 10px;
+    text-decoration: none;
+    padding: 2px;
+    height: 25px;
+    color: #0b0baf;
+}
+a:hover{
+    background: #e7e6e6;
+}
+.page{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.menu a{
+    border: none;
+    font-size: 30px;
+    color: black;
+    text-shadow: 1px 0 black;
+    height: fit-content;
+}
+.menu a[class='active'] {
+    text-decoration: underline;
+    color: rebeccapurple;
+}

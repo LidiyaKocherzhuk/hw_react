@@ -1,0 +1,5 @@
+.photo{
+    display: flex;
+    margin: 20px 10px;
+    column-gap: 15px;
+}
