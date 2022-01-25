@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {carsService} from "../../services/cars.service";
 import Car from "../Car/Car";
 
-const Cars = ({trigger}) => {
+const Cars = ({trigger, update, setCarForUpdate}) => {
 
     const [cars, setCars] = useState([]);
 
@@ -11,18 +11,10 @@ const Cars = ({trigger}) => {
         );
     },[trigger])
 
-    // const filter = () =>{
-    //     if (trigger.model){
-    //
-    //     }
-    // }
-
-
-
     return (
         <div>
 
-            {cars.map(car => <Car key={car.id} car={car}/>)}
+            {cars.map(car => <Car key={car.id} car={car} update={update} setCarForUpdate={setCarForUpdate}/>)}
 
         </div>
     );

@@ -1,11 +1,15 @@
 import React from 'react';
 import {carsService} from "../../services/cars.service";
 
-const Car = ({car}) => {
+const Car = ({car, update, setCarForUpdate}) => {
     const {id, model, price, year} = car;
 
-    const deleteCar = (id) => {
+    const deleteCar = () => {
         carsService.deleteCar(id)
+        update({})
+    }
+    const setCar = () => {
+        setCarForUpdate(car);
     }
 
     return (
@@ -14,7 +18,9 @@ const Car = ({car}) => {
             <h2>model:{model}</h2>
             <h2>price:{price}</h2>
             <h2>year:{year}</h2>
+            <button onClick={setCar}>Update</button>
             <button onClick={deleteCar}>Delete</button>
+
 
             <hr/>
         </div>

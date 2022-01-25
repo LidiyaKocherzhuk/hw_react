@@ -6,16 +6,14 @@ import {useState} from "react";
 function App() {
 
     const [trigger,setTrigger] = useState(null)
+    const [carForUpdate,setCarForUpdate] = useState({})
 
-    const deleteUpdate = (car)=>{
-        setTrigger(car);
-    }
-
+    console.log(trigger)
     return (
         <div>
 
-            <Form deleteUpdate={deleteUpdate}/>
-            <Cars trigger={trigger}/>
+            <Form update={setTrigger} carForUpdate={carForUpdate}/>
+            <Cars trigger={trigger} update={setTrigger} setCarForUpdate={setCarForUpdate}/>
 
         </div>
     );
