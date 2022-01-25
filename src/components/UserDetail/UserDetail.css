@@ -1,0 +1,11 @@
+.user{
+    display: flex;
+    align-items: center;
+}
+.userDetails div{
+    margin-left: 100px;
+}
+.user>button{
+    width: 100px;
+    height: 50px;
+}
