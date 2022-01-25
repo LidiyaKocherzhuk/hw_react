@@ -1,10 +1,11 @@
 import './App.css';
+import SpaceXMissions from "./components/SpaceXMissions/SpaceXMissions";
 
 function App() {
   return (
-    <div>
-
-    </div>
+    <>
+      <SpaceXMissions/>
+    </>
   );
 }
 
