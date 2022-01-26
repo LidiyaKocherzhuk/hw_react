@@ -1,0 +1,21 @@
+*{
+    margin:0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    height: 25px;
+  background: black;
+
+
+}
+.header a{
+    margin: 5px;
+    color: white;
+}
+
+.episodes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
