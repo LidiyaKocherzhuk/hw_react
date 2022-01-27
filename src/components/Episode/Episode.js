@@ -10,9 +10,9 @@ const Episode = ({item, epiItem}) => {
     return (
         <div className={'episode'}>
 
-            <h3>{name}</h3>
-            <h5>air_date: {air_date}</h5>
-            <h5>episode: {episode}</h5>
+            <h2>{name}</h2>
+            <h3>air_date: {air_date}</h3>
+            <h3>episode: {episode}</h3>
             <Link to={`/episode`} state={{...item}}>Episode Detail</Link>
 
         </div>

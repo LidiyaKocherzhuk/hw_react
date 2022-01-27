@@ -1,3 +1,5 @@
 .episode{
-    width: 24%;
+    width: 22%;
+    box-shadow: 0 0 10px 2px #273b7a96;
+    padding: 10px;
 }

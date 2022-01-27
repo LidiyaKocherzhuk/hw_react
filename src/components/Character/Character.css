@@ -1,3 +1,12 @@
 .character{
-    width: 24%;
+    width: 22%;
+    box-shadow: 0 0 10px 2px #162246;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.character img{
+    width: 90%;
 }
