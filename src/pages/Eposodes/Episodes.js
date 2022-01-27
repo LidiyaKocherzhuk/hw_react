@@ -42,6 +42,8 @@ const Episodes = ({namber:{page,prev, next}}) => {
                 <button onClick={btnNext}>Next</button>
             </div>
 
+            <div className={'footer'}>Page-{page}</div>
+
         </div>
     );
 };

@@ -1,15 +1,15 @@
-*{
-    margin:0 auto;
+* {
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
 }
-.header{
+
+.header {
     height: 25px;
-  background: black;
-
-
+    background: black;
 }
-.header a{
+
+.header a {
     margin: 5px;
     color: white;
 }
