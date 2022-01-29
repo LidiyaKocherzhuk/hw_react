@@ -8,23 +8,21 @@ import {Dogs} from "../Dogs/Dogs";
 
 const reducer = (state, active) => {
 
-    console.log(active.cat)
+    console.log(active.dog)
     switch (active.type) {
         case 'addCat':
             state.push({
                 id: new Date().getTime(),
                 cat: active.cat.cat
             })
-            return state
         case 'addDog':
             state.push({
                 id: new Date().getTime(),
-                dogs: active.dog.dog
+                dog: active.dog.dog
             })
-            return state
 
         default:
-            throw new Error('Error 404')
+            return state
     }
 };
 
