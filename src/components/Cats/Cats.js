@@ -1,9 +1,12 @@
 import React from 'react';
 
+let arrayCats = [];
 const Cats = ({cat}) => {
+arrayCats.push(cat)
+    console.log(arrayCats)
     return (
         <div>
-            <h2>Cat: {cat}</h2>
+            {/*{arrayCats.map(value => value )}*/}
         </div>
     );
 };
