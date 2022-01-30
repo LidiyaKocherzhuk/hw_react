@@ -1,13 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+
 import {Car} from "../Car/Car";
-import {useSelector} from "react-redux";
+import {getAllCars} from "../../store/car.slice";
 
 const Cars = () => {
 
-    const {cars} = useSelector(state => state['carReducer']);
+    const {cars, status, error} = useSelector(state => state['carReducer']);
+
+    let dispatch = useDispatch();
+
+    useEffect(()=>{
+        dispatch(getAllCars())
+    },[])
 
     return (
         <div>
+            {status==='pending' && <h2>Loading</h2>}
+            {error && <h2>{error}</h2>}
             {cars && cars.map(car => <Car key={car.id} car={car}/>)}
         </div>
     );
