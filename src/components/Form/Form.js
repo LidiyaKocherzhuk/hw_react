@@ -2,52 +2,57 @@ import React, {useReducer} from 'react';
 import {useForm} from "react-hook-form";
 
 import './Form.css'
-import {Cats} from "../Cats/Cats";
-import {Dogs} from "../Dogs/Dogs";
+import {Animalcule} from "../Animalcule/Animalcule";
 
 
 const reducer = (state, active) => {
-
-    console.log(active.dog)
+    console.log(active.id)
     switch (active.type) {
         case 'addCat':
             state.push({
                 id: new Date().getTime(),
-                cat: active.cat.cat
+                cat: active.cat
             })
+            return state
         case 'addDog':
             state.push({
                 id: new Date().getTime(),
                 dog: active.dog.dog
             })
+            return state
+
 
         default:
-            return state
+            throw new Error('Error')
     }
 };
 
 const Form = () => {
 
-    const [state, dispatch] = useReducer(reducer, [])
+    let [state, dispatch] = useReducer(reducer, [])
     const {register, handleSubmit, reset} = useForm()
 
-    const submitCat = (cat) => {
-        dispatch({type: 'addCat', cat})
+    const submitCat = (e) => {
+        e.preventDefault();
+        dispatch({type: 'addCat', cat: e.target.cat.value})
         reset()
     }
     const submitDog = (dog) => {
         dispatch({type: 'addDog', dog})
         reset()
     }
-    console.log(state)
+    const animalculeDelete = (id) => {
+        dispatch({type: 'id', id})
+        // state = state.filter(item => item.id !== id)
+    };
 
     return (
         <div>
 
             <div className={'forms'}>
 
-                <form onSubmit={handleSubmit(submitCat)}>
-                    <label>Add Cat: <input type='text' {...register('cat')}/></label>
+                <form onSubmit={submitCat}>
+                    <label>Add Cat: <input type='text' name={'cat'}/></label>
                     <button>Save</button>
                 </form>
 
@@ -60,9 +65,7 @@ const Form = () => {
 
             <hr/>
 
-            {/*<div>{arr && arr.map((value, id) => <Cats key={id} cat={value}/>)}</div>*/}
-            {/*{state.cats && <Cats cat={state.cats}/>}*/}
-            {/*{onSubmitD && arrDogs.map((value,id)=> <Dogs key={id} dog={value}/>) }*/}
+            {state && state.map(value=> <Animalcule key={value.id} animalcule={value} animalculeDelete={animalculeDelete}/>) }
 
         </div>
     );
