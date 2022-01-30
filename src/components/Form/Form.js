@@ -6,14 +6,14 @@ import {Animalcule} from "../Animalcule/Animalcule";
 
 
 const reducer = (state, active) => {
-    console.log(active.id)
+
     switch (active.type) {
         case 'addCat':
-            state.push({
+            return [...state, state.push({
                 id: new Date().getTime(),
                 cat: active.cat
-            })
-            return state
+            })]
+
         case 'addDog':
             state.push({
                 id: new Date().getTime(),
@@ -42,7 +42,7 @@ const Form = () => {
         reset()
     }
     const animalculeDelete = (id) => {
-        dispatch({type: 'id', id})
+        // dispatch({type: 'id', id})
         // state = state.filter(item => item.id !== id)
     };
 
