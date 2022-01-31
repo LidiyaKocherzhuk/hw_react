@@ -19,6 +19,7 @@ const Cars = () => {
 
             <Form/>
             <div>
+                <h2>All cars:</h2>
                 {status === 'pending' && <h2>Loading...</h2>}
                 {error && <h2>{error}</h2>}
                 {cars && cars.map(car => <Car key={car.id} car={car}/>)}

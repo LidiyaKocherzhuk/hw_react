@@ -35,6 +35,7 @@ const Form = () => {
     return (
         <div className={'form'}>
 
+            <h2>Create new car:</h2>
             <form onSubmit={handleSubmit(submit)}>
                 <label>Model: <input type="text" {...register('model')}/></label>
                 {errors.model && <span>{errors.model.message}</span>}

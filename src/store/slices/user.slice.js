@@ -19,12 +19,17 @@ export const getAllUsers = createAsyncThunk(
 const userSlice = createSlice({
     name: 'userSlice',
     initialState:{
-        users:[]
+        users:[],
+        status: null,
+        error: null
     },
     reducers:{
 
     },
     extraReducers:{
+        [getAllUsers.pending]: (state, action) => {
+            state.status = 'pending';
+        },
         [getAllUsers.fulfilled]:(state,action)=>{
             state.status = 'fulfilled';
             state.users = action.payload;

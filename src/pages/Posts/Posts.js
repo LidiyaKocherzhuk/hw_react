@@ -7,7 +7,7 @@ import css from '../../App.module.css';
 
 const Posts = () => {
 
-    const {posts, error} = useSelector(state => state['postReducer']);
+    const {posts,status, error} = useSelector(state => state['postReducer']);
     const dispatch = useDispatch();
 
     useEffect(()=>{
@@ -17,6 +17,8 @@ const Posts = () => {
     return (
         <div className={css.items}>
 
+            <h1 className={css.h1}>All posts</h1>
+            {status === 'pending' && <h2>Loading...</h2>}
             {error && <h2>{error}</h2>}
             {posts.map(post=><Post key={post.id} post={post}/>)}
 

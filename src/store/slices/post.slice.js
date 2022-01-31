@@ -1,5 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {placeholderService} from "../../services";
+import {getAllUsers} from "./user.slice";
 
 
 export const getAllPosts = createAsyncThunk(
@@ -33,6 +34,9 @@ const postSlice = createSlice({
 
     extraReducers:{
 
+        [getAllPosts.pending]: (state, action) => {
+            state.status = 'pending';
+        },
         [getAllPosts.fulfilled]: (state, action) => {
             state.status = "fulfilled";
             state.posts = action.payload;

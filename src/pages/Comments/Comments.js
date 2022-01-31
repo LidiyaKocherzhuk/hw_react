@@ -8,7 +8,7 @@ import css from '../../App.module.css';
 
 const Comments = () => {
 
-    const {comments, error} = useSelector(state => state['commentReducer']);
+    const {comments,status, error} = useSelector(state => state['commentReducer']);
     let dispatch = useDispatch();
 
     useEffect(() => {
@@ -18,6 +18,8 @@ const Comments = () => {
     return (
         <div className={css.items}>
 
+            <h1 className={css.h1}>All comments</h1>
+            {status === 'pending' && <h2>Loading...</h2>}
             {error && <h2>{error}</h2>}
             {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
 

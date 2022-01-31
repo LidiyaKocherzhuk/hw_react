@@ -25,7 +25,6 @@ const User = ({user}) => {
             </div>
             <h2><u>phone:</u> {phone};</h2>
             <h2><u>website:</u> {website};</h2>
-            <hr/>
 
         </div>
     );

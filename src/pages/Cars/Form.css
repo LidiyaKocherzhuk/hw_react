@@ -4,3 +4,18 @@
     background: #bdcfee59;
     box-shadow: 1px -5px 20px 0 #001844;
 }
+.form label{
+    margin-left: 10px;
+}
+.form button{
+    width: 60px;
+    background: #001844;
+    color: white;
+    border: 1px #989898 solid;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+}
+.form button:hover{
+    background: #0443b6;
+}
