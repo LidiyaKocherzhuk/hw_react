@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
-import {carService} from "../services";
+import {carService} from "../../services";
 
 
 export const getAllCars = createAsyncThunk(
@@ -34,7 +34,8 @@ export const updateCarAsync = createAsyncThunk(
     'carSlice/updateCarAsync',
     async ({id,car},{dispatch,rejectWithValue})=>{
         try {
-            await carService.updateCar(id,car);
+            const updatedCar = await carService.updateCar(id,car);
+            return updatedCar;
         }
         catch (e) {
             return rejectWithValue(e.message);
@@ -99,6 +100,9 @@ const CarSlice = createSlice({
         [createCar.rejected]:(state,action)=>{
             state.status = 'rejected';
             state.error = action.payload;
+        },
+        [updateCarAsync.fulfilled]: (state,action) => {
+            state.update = action.payload;
         },
         [updateCarAsync.rejected]:(state,action)=>{
             state.status = 'rejected';

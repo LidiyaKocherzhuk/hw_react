@@ -1,5 +1,5 @@
 import {axiosService} from "./axios.service";
-import {url} from "../gonfig/urls";
+import {url} from "../config/urls";
 
 export const carService = {
     getAll: () => axiosService.get(url.cars).then(value => value.data),

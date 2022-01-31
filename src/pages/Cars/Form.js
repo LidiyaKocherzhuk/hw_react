@@ -2,9 +2,10 @@ import {useEffect} from "react";
 import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
 
-import {createCar, updateCarAsync} from "../../store/car.slice";
+import {createCar, updateCarAsync} from "../../store/slices/car.slice";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {carValidator} from "../../validators/car.validator";
+import './Form.css';
 
 const Form = () => {
 
@@ -32,7 +33,7 @@ const Form = () => {
     };
 
     return (
-        <div>
+        <div className={'form'}>
 
             <form onSubmit={handleSubmit(submit)}>
                 <label>Model: <input type="text" {...register('model')}/></label>

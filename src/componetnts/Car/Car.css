@@ -1,0 +1,14 @@
+.car {
+    padding: 20px;
+    background: #bdcfee59;
+
+}
+.car button{
+    width: 60px;
+    background: #001844;
+    color: white;
+    border: 1px #989898 solid;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+}
