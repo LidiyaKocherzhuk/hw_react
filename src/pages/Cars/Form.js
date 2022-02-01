@@ -38,11 +38,11 @@ const Form = () => {
             <h2>Create new car:</h2>
             <form onSubmit={handleSubmit(submit)}>
                 <label>Model: <input type="text" {...register('model')}/></label>
-                {errors.model && <span>{errors.model.message}</span>}
+                {errors.model && <span>{errors.model.message}!</span>}
                 <label>Price: <input type="text" {...register('price')}/></label>
-                {errors.price && <span>{errors.price.message}</span>}
+                {errors.price && <span>{errors.price.message}!</span>}
                 <label>Year: <input type="text" {...register('year')}/></label>
-                {errors.year && <span>{errors.year.message}</span>}
+                {errors.year && <span>{errors.year.message}!</span>}
                 <button>Save</button>
             </form>
 

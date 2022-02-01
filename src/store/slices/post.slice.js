@@ -1,15 +1,16 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
 import {placeholderService} from "../../services";
-import {getAllUsers} from "./user.slice";
 
 
 export const getAllPosts = createAsyncThunk(
 
     'postSlice/getAllPosts',
 
-    async (_,{rejectWithValue}) => {
+    async ({start,limit},{rejectWithValue}) => {
         try {
-            let posts = placeholderService.getPosts();
+            let posts = placeholderService.getPosts(start,limit);
+            console.log(start, limit)
             return posts;
         }
         catch (e){
@@ -26,10 +27,24 @@ const postSlice = createSlice({
         posts: [],
         status: null,
         error: null,
+        start: 0,
+        limit: 10,
     },
 
     reducers:{
-
+        limits:(state,action)=>{
+            if (action.payload.type === 'prev') {
+                if (state.start) {
+                    state.start -=10;
+                }
+            }
+            if (action.payload.type === 'next'){
+                if (state.limit === 90) {
+                    return;
+                }
+                    state.start +=10;
+            }
+        }
     },
 
     extraReducers:{
@@ -50,5 +65,6 @@ const postSlice = createSlice({
 });
 
 let postReducer = postSlice.reducer;
+export const {limits} = postSlice.actions;
 
 export default postReducer;

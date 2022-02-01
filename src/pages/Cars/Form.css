@@ -3,9 +3,29 @@
     padding: 20px;
     background: #bdcfee59;
     box-shadow: 1px -5px 20px 0 #001844;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+}
+.form form{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: fit-content;
+    row-gap: 5px;
+}
+.form input{
+    height: 25px;
+    width: 200px;
 }
 .form label{
     margin-left: 10px;
+}
+.form span{
+    font-style: oblique;
+    color: red;
+    font-size: 13px;
 }
 .form button{
     width: 60px;

@@ -6,9 +6,9 @@ import {placeholderService} from "../../services";
 export const getAllComments = createAsyncThunk(
     'commentSlice/getAllComments',
 
-    async (_, {rejectWithValue}) => {
+    async ({start, limit}, {rejectWithValue}) => {
         try {
-            let comments = placeholderService.getComments();
+            let comments = placeholderService.getComments(start, limit);
             return comments;
         } catch (e) {
             return rejectWithValue(e.message);
@@ -23,10 +23,31 @@ const commentSlice = createSlice({
     initialState: {
         comments: [],
         status: null,
-        error: null
+        error: null,
+        start: 0,
+        limit: 10,
     },
 
-    reducers: {},
+    reducers:{
+
+        limitsComment:(state,action)=>{
+            console.log(action.payload.type)
+            if (action.payload.type === 'prev') {
+                if (state.start) {
+                    state.start -=10;
+                    state.limit -=10
+                }
+            }
+            if (action.payload.type === 'next'){
+                if (state.limit === 500) {
+                    return;
+                }
+                state.start +=10;
+                state.limit +=10
+            }
+        }
+
+    },
 
     extraReducers: {
 
@@ -47,5 +68,6 @@ const commentSlice = createSlice({
 })
 
 let commentReducer = commentSlice.reducer;
+export const {limitsComment} = commentSlice.actions;
 
 export default commentReducer;
