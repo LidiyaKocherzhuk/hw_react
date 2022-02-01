@@ -1,14 +1,17 @@
 import './App.css';
-import {Form} from "./components/Form/Form";
+import {Cats, Dogs, Form} from "./components";
 import {useReducer} from "react";
+import {Reducer} from "./reducer/Reduсer";
 
 function App() {
 
-    // let [state, dispatch] = useReducer(reducer, {cets: [], dogs: []});
+    let [{cats,dogs}, dispatch] = useReducer(Reducer, {cats: [], dogs: []});
 
     return (
         <div>
-            <Form/>
+            <Form dispatch={dispatch}/>
+            <Cats cats={cats}/>
+            <Dogs dogs={dogs}/>
         </div>
     );
 }

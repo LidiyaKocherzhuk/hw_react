@@ -1,37 +1,23 @@
-import React, {useReducer} from 'react';
-import {useForm} from "react-hook-form";
+import {useRef} from "react";
 
 import './Form.css'
-import {Animalcule} from "../Animalcule/Animalcule";
 
+const Form = ({dispatch}) => {
 
-// const reducer = (state, active) => {
-//
-//     // switch (active.type) {
-//     //     case 'addCat':
-//     //         return [...state, state.cats:{
-//     //             id: new Date().getTime(),
-//     //             cat: active.cat
-//     //         }]
-//
-//         case 'addDog':
-//             state.push({
-//                 id: new Date().getTime(),
-//                 dog: active.dog.dog
-//             })
-//             return state
-//
-//
-//         default:
-//             throw new Error('Error')
-//     }
-// };
-
-const Form = () => {
+    let catInput = useRef();
+    let dogInput = useRef();
 
     const submit = (e) => {
         e.preventDefault();
-    }
+        e.target.reset()
+    };
+
+    const saveCat = ()=>{
+        dispatch({type:'addCat', payload:catInput.current.value})
+    };
+    const saveDog = ()=>{
+        dispatch({type:'addDog',payload:dogInput.current.value})
+    };
 
     return (
         <div>
@@ -39,13 +25,14 @@ const Form = () => {
             <div className={'forms'}>
 
                 <form onSubmit={submit}>
-                    <label>Add Cat: <input type='text' name={'cat'}/></label>
-                    <button>Save</button>
-                    <label>Add Dog: <input type="text" name={'dog'}/></label>
-                    <button>Save</button>
+                    <label>Add Cat: <input type='text' name={'cat'} ref={catInput}/></label>
+                    <button onClick={saveCat}>Save</button>
+                    <label>Add Dog: <input type="text" name={'dog'} ref={dogInput}/></label>
+                    <button onClick={saveDog}>Save</button>
                 </form>
 
             </div>
+            <hr/>
 
         </div>
     );
