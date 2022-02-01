@@ -35,15 +35,13 @@ const commentSlice = createSlice({
             if (action.payload.type === 'prev') {
                 if (state.start) {
                     state.start -=10;
-                    state.limit -=10
                 }
             }
             if (action.payload.type === 'next'){
-                if (state.limit === 500) {
+                if (state.start === 490) {
                     return;
                 }
                 state.start +=10;
-                state.limit +=10
             }
         }
 
