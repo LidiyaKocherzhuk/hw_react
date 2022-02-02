@@ -1,0 +1,4 @@
+.cats-dogs{
+    display: flex;
+    justify-content: space-around;
+}

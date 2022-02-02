@@ -1,11 +1,13 @@
 import React from 'react';
+import './Cat.css'
 
-const Cat = ({cat}) => {
+const Cat = ({cat: {id, name}, dispatch}) => {
+
 
     return (
-        <div>
-            <h2>Cat name: {cat.name}</h2>
-            <button>Delete</button>
+        <div className={"cat"}>
+            <h2>Cat name: {name}</h2>
+            <button onClick={() => dispatch({type: "deleteCat", id})}>Delete</button>
         </div>
     );
 };
