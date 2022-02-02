@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import {useDispatch} from "react-redux";
 
 import {checkRoutine, deleteRoutine} from "../../store/routine.slice";
-import './Routine.css'
+import "./Routine.css"
 
 const Routine = ({item}) => {
     const {id,value,status} = item;

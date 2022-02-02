@@ -1,7 +1,7 @@
 import React, {useRef} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
-import './App.css';
+import "./App.css";
 import {addRoutine} from "./store/routine.slice";
 import {Routines} from "./components/Routines/Routines";
 

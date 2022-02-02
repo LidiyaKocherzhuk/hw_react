@@ -1,4 +1,5 @@
 import {configureStore} from "@reduxjs/toolkit";
+
 import routineReducer from "./routine.slice";
 
 const storeConfig = configureStore({
