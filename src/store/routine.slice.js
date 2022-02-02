@@ -37,6 +37,7 @@ const routineSlice = createSlice({
 
             state.routines = state.routines.filter(value => value.id !== action.payload.id);
             state.counterAll--;
+            state.counterCompleted--;
         }
 
     }
