@@ -20,7 +20,6 @@ const Episodes = () => {
 
     const btnNext = () => {
         setPages(pages + 1)
-        console.log(pages)
     }
 
     function btnPrev() {
