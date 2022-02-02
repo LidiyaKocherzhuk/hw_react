@@ -14,8 +14,6 @@ const Character = ({item}) => {
 
     const {image, name, status, species, gender, origin={name}, location={name}} = character;
 
-    console.log(image)
-
     return (
         <div className={'character'}>
 

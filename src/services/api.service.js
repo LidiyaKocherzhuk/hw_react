@@ -1,17 +1,15 @@
-import {axiosService, urls} from "./axios.service";
+import {axiosService} from "./axios.service";
+import {baseURL, urls} from "../config/urls";
 
 export const apiService = {
-    getCharacter: ()=> axiosService.get().then(value => value.data),
-    getLocation: ()=> axiosService.get.then(value => value.data),
-    getEpisode: ()=> axiosService.get(urls.getEpisode).then(value => value.data)
-};
+    getEpisode:()=>axiosService.get(`https://rickandmortyapi.com/api/episode`).then(value => value.data)
+}
 
 export const urlFromEpisode = {
     getInfo: (url) => axiosService.get(`${url}`).then(value => value.data)
 }
 
 export const apiPage = {
-   getPage: (numberPage)=> axiosService.get(`https://rickandmortyapi.com/api/episode?page=${numberPage}`)
-       .then(value => value.data)
+   getPage: (number)=> axiosService.get(`${urls.episode}?page=${number}`).then(value => value.data)
 
 }

@@ -6,7 +6,6 @@ import {Character} from "../../components/Character/Character";
 const Characters = () => {
 
     const {state} = useLocation();
-    console.log(state.characters)
 
     return (
         <div>
