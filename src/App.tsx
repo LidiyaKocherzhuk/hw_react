@@ -1,11 +1,16 @@
 import React, {FC} from 'react';
+import {Cars, Form} from "./components";
 
-const App:FC = () => {
-  return (
-    <div>
+const App: FC = () => {
 
-    </div>
-  );
+    return (
+        <div>
+
+            <Form/>
+            <Cars/>
+
+        </div>
+    );
 }
 
 export default App;
